@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ProfileActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/back"
+            android:layout_marginTop="-30dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:textColor="#000"
+            android:textSize="22dp"
+            android:text="User Profile"/>
+
+        <ImageView
+            android:id="@+id/bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="320dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@+id/back"
+            android:src="@drawable/ic_bookmark"/>
+
+        <ImageView
+            android:id="@+id/kotak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Title"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/picprofil" />
+
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Title"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="Sad Vika Alam"
+            android:textColor="#ffffff"
+            android:textSize="26dp" />
+
+        <TextView
+            android:id="@+id/profileMajor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileName"
+            android:layout_marginTop="7dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="Computer Science and Technology"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_below="@id/Title"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="120dp"
+            android:src="@drawable/alam" />
+
+        <RelativeLayout
+            android:id="@+id/boxInformation"
+            android:layout_below="@+id/profileImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/boxEvent"
+                android:layout_width="180dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/radius_box"
+                android:elevation="5dp"
+                android:fontFamily="@font/poppinssemi"
+                android:paddingTop="20dp"
+                android:text="3 Events"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+
+            <TextView
+                android:id="@+id/boxNote"
+                android:layout_width="180dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_toRightOf="@+id/boxEvent"
+                android:background="@drawable/radius_box"
+                android:elevation="5dp"
+                android:fontFamily="@font/poppinssemi"
+                android:paddingTop="20dp"
+                android:text="3 Notes"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="30dp" />
+
+
+        </RelativeLayout>
+
+
+        <ImageView
+            android:id="@+id/picleft"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="420dp"
+            android:src="@drawable/pichomeleft" />
+
+        <TextView
+            android:id="@+id/boxEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/boxInformation"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="left"
+            android:text="Email"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/profileEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/boxEmail"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="left"
+            android:text="Alamsadvika@hotmail.com"
+            android:textColor="@color/grey"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/boxDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/profileEmail"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="left"
+            android:text="Description"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/profileDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/boxDescription"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="left"
+            android:text="Tugas ini dibuat untuk memenuhi Ujian Tengah Semester Pemrograman Mobile 2"
+            android:textColor="@color/grey"
+            android:textSize="12dp" />
+
+        <Button
+            android:id="@+id/updateProfileButton"
+            android:layout_below="@+id/boxDescription"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/radius_btnaksen"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:text="UPDATE MY DATA" />
+    </RelativeLayout>
+</RelativeLayout>
