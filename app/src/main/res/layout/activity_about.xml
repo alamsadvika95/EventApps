@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AboutActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbAbout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+    <ImageView
+        android:id="@+id/imageDetail"
+        android:layout_width="500dp"
+        android:layout_height="550dp"
+        android:layout_marginTop="-80dp"
+        android:src="@drawable/pichome"
+        />
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_bacwhite" />
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:gravity="center"
+        android:layout_below="@id/back"
+        android:fontFamily="@font/poppinssemi"
+        android:textColor="#fff"
+        android:textSize="22dp"
+        android:text="Event Details" />
+
+
+    <ImageView
+        android:id="@+id/wave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-210dp"
+        android:src="@drawable/picwave" />
+
+    <TextView
+        android:id="@+id/eventNameDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:gravity="left"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/Title"
+        android:fontFamily="@font/poppins"
+        android:textColor="#000"
+        android:textSize="25dp"
+        android:text="Event Apps" />
+    <TextView
+        android:id="@+id/contentEventText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventNameDetail"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Creator -"
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/university"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contentEventDetail"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="University - "
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/contentEventDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventNameDetail"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/contentEventText"
+        android:fontFamily="@font/montserrat"
+        android:text="Sad Vika Alam "
+        android:textSize="19sp" />
+
+    <TextView
+        android:id="@+id/creatorEventDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contentEventText"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/university"
+        android:layout_marginRight="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Zhejiang University of Science and Technology"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/dateEventText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/university"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppinssemi"
+        android:text="Description "
+        android:textColor="@color/black"
+        android:textSize="19sp" />
+
+    <ImageView
+        android:id="@+id/picleft"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="420dp"
+        android:src="@drawable/pichomeleft" />
+
+    <TextView
+        android:id="@+id/dateEventDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateEventText"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Event Apps is a mobile application to create a event and share it with our friend. So we can learn together and gain togehter. The motto of our apps is From Us to Us. "
+        android:textSize="16sp" />
+
+
+    <TextView
+        android:id="@+id/contactMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateEventDetail"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppinssemi"
+        android:text="Contact Me "
+        android:textColor="@color/black"
+        android:layout_marginBottom="2dp"
+        android:textSize="15sp" />
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/facebookBtn"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:src="@drawable/facebook"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/contactMe"
+        app:cb_color="#fff"
+        app:cb_pressedRingWidth="8dip" />
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/twitterBtn"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:src="@drawable/twitter"
+        android:layout_toRightOf="@+id/facebookBtn"
+        android:layout_marginLeft="60dp"
+        android:layout_below="@+id/contactMe"
+        app:cb_color="#fff"
+        app:cb_pressedRingWidth="8dip" />
+
+    <at.markushi.ui.CircleButton
+        android:id="@+id/instagramBtn"
+        android:layout_width="64dip"
+        android:layout_height="64dip"
+        android:src="@drawable/instagram"
+        android:layout_toRightOf="@+id/twitterBtn"
+        android:layout_marginLeft="60dp"
+        android:layout_below="@+id/contactMe"
+        app:cb_color="#fff"
+        app:cb_pressedRingWidth="8dip" />
+</RelativeLayout>
+

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/pictop"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginTop="-40dp"
+            android:layout_marginLeft="200dp"
+            android:src="@drawable/pictop" />
+        <ImageView
+            android:id="@+id/picleft"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/pichomeleft" />
+        <ImageView
+            android:id="@+id/picright"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="380dp"
+            android:src="@drawable/pichomeright" />
+
+        <TextView
+            android:id="@+id/loginText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:fontFamily="@font/poppinssemi"
+            android:textColor="#000"
+            android:textSize="35dp"
+            android:text="LOGIN" />
+
+        <ImageView
+            android:id="@+id/loginPic"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/loginText"
+            android:layout_height="190dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/picadd" />
+
+
+
+        <EditText
+            android:id="@+id/loginUsername"
+            android:layout_below="@+id/loginPic"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:background="@drawable/radius_formwhite"
+            android:elevation="5dp"
+            android:inputType="textPersonName"
+            android:hint="Username"
+            android:fontFamily="@font/montserrat"
+            android:textSize="14dp"
+            android:textColor="#000" />
+
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_below="@+id/loginUsername"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:paddingLeft="15dp"
+            android:background="@drawable/radius_formwhite"
+            android:elevation="5dp"
+            android:inputType="textPassword"
+            android:hint="Password"
+            android:fontFamily="@font/montserrat"
+            android:textSize="14dp"
+            android:textColor="#000" />
+
+
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_below="@+id/loginPassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/radius_btnaksen"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:text="LOGIN" />
+
+        <Button
+            android:id="@+id/loginToRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/loginButton"
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/poppins"
+            android:text="@string/button_not_register"
+            android:textAllCaps="false"
+            android:textColor="#92A7AB"
+            android:textSize="12sp"
+            app:cornerRadius="50dp" />
+
+    </RelativeLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

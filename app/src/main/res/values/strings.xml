@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">EventApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button_not_register">Not have account yet? <font color='red'>Register Now</font></string>
+    <string name="button_registered">Already have acoount? <font color='red'>Login Now</font></string>
+    <string name="cancel">Cancel</string>
+    <string name="exit">Exit</string>
+</resources>
