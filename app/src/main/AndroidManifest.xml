@@ -12,7 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EventAppFinal">
-        <activity android:name=".activity.AddEventActivity"></activity>
+        <activity android:name=".activity.AvaibilityActivity"></activity>
+        <activity android:name=".activity.UpdateMyEventActivity" />
+        <activity android:name=".activity.DetailMyEventActivity" />
+        <activity android:name=".activity.MyEventActivity" />
+        <activity android:name=".activity.AddEventActivity" />
         <activity android:name=".activity.UpdateProfileActivity" />
         <activity android:name=".activity.ProfileActivity" />
         <activity android:name=".activity.RegisterActivity" />

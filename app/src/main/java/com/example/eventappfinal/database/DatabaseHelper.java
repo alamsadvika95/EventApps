@@ -47,6 +47,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(create_tb_user);
         db.execSQL(create_tb_notes);
         db.execSQL(create_tb_event);
+        db.execSQL(Content.insert1);
     }
 
     @Override
@@ -94,7 +95,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Content.EVENT_DESCRIPTION, description);
         values.put(Content.EVENT_EMAIL, email);
 
-        long result = create.insert("tb_event",null, values);
+        long result = create.insert(Content.TABLE_EVENT,null, values);
+        return result;
+    }
+
+    public long updateEvent(String id, String name, String category, String date, String content, String duration, String capacity, String description, String email){
+        SQLiteDatabase create = getWritableDatabase();
+        ContentValues values =new ContentValues();
+
+        values.put(Content.EVENT_NAME, name);
+        values.put(Content.EVENT_CATEGORY, category);
+        values.put(Content.EVENT_DATE, date );
+        values.put(Content.EVENT_CONTENT, content);
+        values.put(Content.EVENT_DURATION, duration);
+        values.put(Content.EVENT_CAPACITY, capacity);
+        values.put(Content.EVENT_DESCRIPTION, description);
+        values.put(Content.EVENT_EMAIL, email);
+
+        long result = create.update(Content.TABLE_EVENT,values,"id=?",new String[]{id});
         return result;
     }
 }

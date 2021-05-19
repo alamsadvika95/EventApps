@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteblurred"
+    tools:context=".activity.MyEventActivity">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_back" />
+    <ImageView
+        android:id="@+id/pictop"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="-40dp"
+        android:layout_marginLeft="200dp"
+        android:src="@drawable/pictop" />
+    <ImageView
+        android:id="@+id/picleft"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:src="@drawable/pichomeleft" />
+
+    <TextView
+        android:id="@+id/headText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:gravity="left"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="#000"
+        android:textSize="28dp"
+        android:text="My Event" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerMyEvent"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/headText"
+        android:scrollbars="vertical">
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

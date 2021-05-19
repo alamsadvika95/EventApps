@@ -48,14 +48,14 @@ public class MainActivity extends AppCompatActivity {
         menuMyEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, AboutActivity.class);
+                Intent i = new Intent(MainActivity.this, MyEventActivity.class);
                 startActivity(i);
             }
         });
         menuAvailableEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, AboutActivity.class);
+                Intent i = new Intent(MainActivity.this, AvaibilityActivity.class);
                 startActivity(i);
             }
         });

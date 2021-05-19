@@ -37,4 +37,7 @@ public class Content {
     public static final String JOIN_ID="id";
     public static final String JOIN_ID_EVENT="IdEvent";
     public static final String JOIN_EMAIL="email";
+
+    public static final String insert1 = "INSERT INTO tb_event (name, category, date, content, duration, capacity, description, email) VALUES ( 'TB','TB','TB','TB','T','T','T','T');";
+
 }
