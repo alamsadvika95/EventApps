@@ -189,12 +189,12 @@
 
         <Button
             android:id="@+id/updateProfileButton"
-            android:layout_below="@+id/boxDescription"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="70dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:layout_marginBottom="30dp"
+            android:layout_alignParentBottom="true"
             android:background="@drawable/radius_btnaksen"
             android:fontFamily="@font/poppins"
             android:textColor="@color/white"

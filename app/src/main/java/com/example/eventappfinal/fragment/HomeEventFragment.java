@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.eventappfinal.R;
@@ -26,7 +27,6 @@ public class HomeEventFragment extends Fragment {
         View view =inflater.inflate(R.layout.fragment_home_event, container, false);
 
         back = view.findViewById(R.id.back);
-
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

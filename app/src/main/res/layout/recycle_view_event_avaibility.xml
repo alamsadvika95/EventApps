@@ -29,13 +29,28 @@
         android:textSize="19sp"
         android:textStyle="bold" />
     <TextView
+        android:id="@+id/viewEventContentText"
+        android:fontFamily="@font/poppins"
+        android:layout_toRightOf="@id/image"
+        android:layout_below="@id/viewEventNameAvaibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="5dp"
+        android:text="Content - "
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/viewEventContentAvaibility"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/viewEventNameAvaibility"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@id/image"
+        android:layout_toRightOf="@id/viewEventContentText"
         android:fontFamily="@font/montserratthin"
         android:text="Content"
         android:textSize="14sp" />
@@ -43,6 +58,7 @@
         android:id="@+id/viewEventIdAvaibility"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:layout_below="@id/viewEventContentAvaibility"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
@@ -51,13 +67,27 @@
         android:text="Id"
         android:textSize="14sp" />
     <TextView
+        android:id="@+id/viewEventCreatorText"
+        android:fontFamily="@font/poppins"
+        android:layout_toRightOf="@id/image"
+        android:layout_below="@id/viewEventContentText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="5dp"
+        android:text="Creator - "
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+    <TextView
         android:id="@+id/viewEventEmailAvaibility"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/viewEventIdAvaibility"
+        android:layout_below="@id/viewEventContentText"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
-        android:layout_toRightOf="@id/image"
+        android:layout_toRightOf="@id/viewEventCreatorText"
         android:fontFamily="@font/montserratthin"
         android:text="Email"
         android:textSize="14sp" />

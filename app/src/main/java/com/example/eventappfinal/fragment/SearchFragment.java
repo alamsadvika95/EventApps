@@ -9,57 +9,54 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.example.eventappfinal.R;
 import com.example.eventappfinal.adapter.MonthlyEventAdapter;
+import com.example.eventappfinal.adapter.SearchEventAdapter;
 import com.example.eventappfinal.database.DatabaseHelper;
 import com.example.eventappfinal.session.SessionManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Objects;
 
-public class MonthlyEventFragment extends Fragment {
-
+public class SearchFragment extends Fragment {
     private DatabaseHelper dbHelper;
     private RecyclerView recyclerView;
-    private MonthlyEventAdapter monthlyEventAdapter;
-    private SwipeRefreshLayout swipeRefreshLayout;
-
+    private SearchEventAdapter searchEventAdapter;
     private RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(getActivity());
     private ArrayList nameList;
     private ArrayList contentList;
     private ArrayList idList;
     private ArrayList emailList;
     private ArrayList dateList;
-
     private String emailProfile;
+    EditText searchEvent;
+    Button searchEventButton;
 
-    public MonthlyEventFragment() {
-
+    public SearchFragment() {
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view =inflater.inflate(R.layout.fragment_monthly_event, container, false);
-
-        swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
+        View view =inflater.inflate(R.layout.fragment_search, container, false);
 
         SessionManager sessionManager = new SessionManager(requireActivity());
         HashMap<String, String> user = sessionManager.getUserDetails();
         emailProfile = user.get(SessionManager.KEY_EMAIL);
 
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        searchEvent = view.findViewById(R.id.searchEvent);
+        searchEventButton = view.findViewById(R.id.searchEventButton);
+
+        searchEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onRefresh() {
+            public void onClick(View v) {
                 nameList = new ArrayList<>();
                 contentList = new ArrayList<>();
                 idList = new ArrayList<>();
@@ -67,49 +64,30 @@ public class MonthlyEventFragment extends Fragment {
                 dateList = new ArrayList<>();
 
                 dbHelper = new DatabaseHelper(getActivity().getBaseContext());
-                recyclerView = view.findViewById(R.id.recyclerMonthly);
+                recyclerView = view.findViewById(R.id.recyclerSearch);
                 getData();
                 layoutManager = new LinearLayoutManager(getActivity());
                 recyclerView.setLayoutManager(layoutManager);
                 recyclerView.setHasFixedSize(true);
-                monthlyEventAdapter = new MonthlyEventAdapter(MonthlyEventFragment.this, nameList, contentList, idList,emailList,dateList);
+                searchEventAdapter = new SearchEventAdapter(SearchFragment.this, nameList, contentList, idList,emailList,dateList);
                 //memasang adapter di recycle view
-                recyclerView.setAdapter(monthlyEventAdapter);
+                recyclerView.setAdapter(searchEventAdapter);
                 //membuat underline pada setiap item di dalem list
                 DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity().getApplicationContext(), DividerItemDecoration.VERTICAL);
                 itemDecoration.setDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.line));
                 recyclerView.addItemDecoration(itemDecoration);
             }
         });
-        nameList = new ArrayList<>();
-        contentList = new ArrayList<>();
-        idList = new ArrayList<>();
-        emailList = new ArrayList<>();
-        dateList = new ArrayList<>();
 
-        dbHelper =new DatabaseHelper(getActivity().getBaseContext());
-        recyclerView = view.findViewById(R.id.recyclerMonthly);
-        getData();
-        layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-        monthlyEventAdapter = new MonthlyEventAdapter(MonthlyEventFragment.this, nameList, contentList, idList,emailList,dateList);
-        //Memasang Adapter pada RecyclerView
-        recyclerView.setAdapter(monthlyEventAdapter);
-        //Membuat Underline pada Setiap Item Didalam List
-        DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity().getApplicationContext(), DividerItemDecoration.VERTICAL);
-        itemDecoration.setDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.line));
-        recyclerView.addItemDecoration(itemDecoration);
-
-
-        return view;
+        return  view;
     }
 
     protected void getData() {
 
+        String searchText = searchEvent.getText().toString().trim();
         //Mengambil Repository dengan Mode Membaca
         SQLiteDatabase ReadData = dbHelper.getReadableDatabase();
-        Cursor cursor = ReadData.rawQuery("SELECT * FROM  tb_event WHERE category = 'Monthly Event' AND email NOT LIKE '"+ emailProfile +"' ", null);
+        Cursor cursor = ReadData.rawQuery("SELECT * FROM  tb_event WHERE description LIKE '%"+ searchText + "%' AND email NOT LIKE '"+ emailProfile +"' ", null);
 
         cursor.moveToFirst();//Memulai Cursor pada Posisi Awal
 

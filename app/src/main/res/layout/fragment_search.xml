@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteblurred"
+    tools:context=".fragment.SearchFragment">
+
+    <ImageView
+        android:id="@+id/pictop"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="-40dp"
+        android:src="@drawable/pictop" />
+    <ImageView
+        android:id="@+id/picleft"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:src="@drawable/pichomeleft" />
+
+    <EditText
+        android:id="@+id/searchEvent"
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:background="@drawable/radius_formwhite"
+        android:elevation="5dp"
+        android:inputType="text"
+        android:hint="Search Event"
+        android:fontFamily="@font/montserrat"
+        android:textSize="14dp"
+        android:textColor="#000" />
+    <Button
+        android:id="@+id/searchEventButton"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="70dp"
+        android:layout_toRightOf="@+id/searchEvent"
+        android:background="@drawable/radius_btnaksen"
+        android:fontFamily="@font/poppins"
+        android:text="Search"
+        android:textColor="#fff"
+        android:elevation="5dp"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefresh"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/searchEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerSearch"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical">
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</RelativeLayout>

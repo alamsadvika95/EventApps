@@ -11,12 +11,13 @@ import com.example.eventappfinal.R;
 import com.example.eventappfinal.fragment.HomeEventFragment;
 import com.example.eventappfinal.fragment.MonthlyEventFragment;
 import com.example.eventappfinal.fragment.OneTimeEventFragment;
+import com.example.eventappfinal.fragment.SearchFragment;
 import com.example.eventappfinal.fragment.SeminarFragment;
 import com.example.eventappfinal.fragment.WeeklyEventFragment;
 
 public class AvaibilityActivity extends AppCompatActivity {
 
-    private final int NUM_PAGES = 5;
+    private final int NUM_PAGES = 6;
     private ViewPager2 pager;
     private String sendVal = "id";
     private MeowBottomNavigation bottomNavigation;
@@ -36,10 +37,11 @@ public class AvaibilityActivity extends AppCompatActivity {
         bottomNavigation.show(1, true);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home));
-        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_list));
+        bottomNavigation.add(new MeowBottomNavigation.Model(2, R.drawable.ic_search));
         bottomNavigation.add(new MeowBottomNavigation.Model(3, R.drawable.ic_list));
         bottomNavigation.add(new MeowBottomNavigation.Model(4, R.drawable.ic_list));
         bottomNavigation.add(new MeowBottomNavigation.Model(5, R.drawable.ic_list));
+        bottomNavigation.add(new MeowBottomNavigation.Model(6, R.drawable.ic_list));
 
         bottomNavigation.setOnClickMenuListener(new MeowBottomNavigation.ClickListener() {
             @Override
@@ -59,6 +61,9 @@ public class AvaibilityActivity extends AppCompatActivity {
                         break;
                     case 5:
                         pager.setCurrentItem(4);
+                        break;
+                    case 6:
+                        pager.setCurrentItem(5);
                         break;
                     default:
                         pager.setCurrentItem(0);
@@ -80,7 +85,6 @@ public class AvaibilityActivity extends AppCompatActivity {
                 // your codes
             }
         });
-
     }
 
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
@@ -94,12 +98,14 @@ public class AvaibilityActivity extends AppCompatActivity {
                 case 0:
                     return new HomeEventFragment();
                 case 1:
-                    return new OneTimeEventFragment();
+                    return new SearchFragment();
                 case 2:
-                    return new WeeklyEventFragment();
+                    return new OneTimeEventFragment();
                 case 3:
-                    return new MonthlyEventFragment();
+                    return new WeeklyEventFragment();
                 case 4:
+                    return new MonthlyEventFragment();
+                case 5:
                     return new SeminarFragment();
                 default:
                     return new HomeEventFragment();
