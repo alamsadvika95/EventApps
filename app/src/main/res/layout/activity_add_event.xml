@@ -6,10 +6,14 @@
     android:layout_height="match_parent"
     tools:context="activity.AddEventActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/tbAddEvent"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize" />
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_back"/>
 
     <ImageView
         android:id="@+id/pictop"

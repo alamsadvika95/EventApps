@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.InputType;
@@ -47,7 +48,6 @@ public class AddEventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_event);
         dbHelper = new DatabaseHelper(AddEventActivity.this);
         db = dbHelper.getReadableDatabase();
-
         //init
         addEventButton = findViewById(R.id.addEventButton);
         etTanggal = findViewById(R.id.eventDateText);
@@ -128,8 +128,15 @@ public class AddEventActivity extends AppCompatActivity {
 
             }
         });
-    }
 
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AddEventActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
+    }
     private void setDateTimeField() {
         etTanggal.setOnClickListener(new View.OnClickListener() {
             @Override

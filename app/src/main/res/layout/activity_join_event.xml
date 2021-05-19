@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.JoinEventActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/pictop"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="-40dp"
+            android:src="@drawable/pictop" />
+
+        <ImageView
+            android:id="@+id/picleft"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/pichomeleft" />
+        <ImageView
+            android:id="@+id/picright"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="380dp"
+            android:src="@drawable/pichomeright" />
+
+        <TextView
+            android:id="@+id/helloText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppinssemi"
+            android:gravity="center"
+            android:text="Hello"
+            android:textColor="#000"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/nameUserEvent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/helloText"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppinssemi"
+            android:gravity="center"
+            android:text="Sad Vika Alam"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/joinTitleText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameUserEvent"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppinssemi"
+            android:gravity="center"
+            android:text="YOU ALREADY JOIN"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/nameJoinText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/joinTitleText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="left"
+            android:text="Event Name"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/nameJoinEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameJoinText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="left"
+            android:text="Math Event"
+            android:textColor="@color/grey"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/categoryJoinText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nameJoinEvent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="left"
+            android:text="Category"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/categoryJoinEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categoryJoinText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="left"
+            android:text="One Time Event"
+            android:textColor="@color/grey"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/creatorJoinText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categoryJoinEvent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="left"
+            android:text="Creator"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/creatorJoinEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/creatorJoinText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="left"
+            android:text="alamsadvika@gmail.com"
+            android:textColor="@color/grey"
+            android:textSize="12dp" />
+
+        <TextView
+            android:id="@+id/dateJoinText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/creatorJoinEvent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="left"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+        <TextView
+            android:id="@+id/dateJoinEvent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateJoinText"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/montserrat"
+            android:gravity="left"
+            android:text="23 May 2021"
+            android:textColor="@color/grey"
+            android:textSize="12dp" />
+        <TextView
+            android:id="@+id/reminderJoinText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dateJoinEvent"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="30dp"
+            android:fontFamily="@font/poppins"
+            android:gravity="left"
+            android:text="Dont forget to attend the event on time, Have a nice time !!!"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/joinToMain"
+            android:layout_below="@+id/reminderJoinText"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/radius_btnaksen"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/white"
+            android:text="Go to Dashboard" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

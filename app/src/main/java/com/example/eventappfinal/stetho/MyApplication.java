@@ -1,4 +1,4 @@
-package com.example.eventappfinal.activity;
+package com.example.eventappfinal.stetho;
 
 import android.app.Application;
 import android.content.Context;

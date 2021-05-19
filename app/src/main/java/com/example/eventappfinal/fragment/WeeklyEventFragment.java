@@ -1,66 +1,120 @@
 package com.example.eventappfinal.fragment;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.eventappfinal.R;
+import com.example.eventappfinal.adapter.WeeklyEventAdapter;
+import com.example.eventappfinal.database.DatabaseHelper;
+import com.example.eventappfinal.session.SessionManager;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link WeeklyEventFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Objects;
+
 public class WeeklyEventFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private DatabaseHelper dbHelper;
+    private RecyclerView recyclerView;
+    private WeeklyEventAdapter weeklyEventAdapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private RecyclerView.LayoutManager layoutManager =new LinearLayoutManager(getActivity());
+    private ArrayList nameList;
+    private ArrayList contentList;
+    private ArrayList idList;
+    private ArrayList emailList;
+    private ArrayList dateList;
+
+    private String emailProfile;
 
     public WeeklyEventFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment WeeklyEventFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static WeeklyEventFragment newInstance(String param1, String param2) {
-        WeeklyEventFragment fragment = new WeeklyEventFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view =inflater.inflate(R.layout.fragment_weekly_event, container, false);
+        swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
+
+        SessionManager sessionManager = new SessionManager(requireActivity());
+        HashMap<String, String> user = sessionManager.getUserDetails();
+        emailProfile = user.get(SessionManager.KEY_EMAIL);
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                nameList = new ArrayList<>();
+                contentList = new ArrayList<>();
+                idList = new ArrayList<>();
+                emailList = new ArrayList<>();
+                dateList = new ArrayList<>();
+
+                dbHelper = new DatabaseHelper(getActivity().getBaseContext());
+                recyclerView = view.findViewById(R.id.recyclerWeekly);
+                getData();
+                layoutManager = new LinearLayoutManager(getActivity());
+                recyclerView.setLayoutManager(layoutManager);
+                recyclerView.setHasFixedSize(true);
+                weeklyEventAdapter = new WeeklyEventAdapter(WeeklyEventFragment.this, nameList, contentList, idList,emailList,dateList);
+                //memasang adapter di recycle view
+                recyclerView.setAdapter(weeklyEventAdapter);
+                //membuat underline pada setiap item di dalem list
+                DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity().getApplicationContext(), DividerItemDecoration.VERTICAL);
+                itemDecoration.setDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.line));
+                recyclerView.addItemDecoration(itemDecoration);
+            }
+        });
+        nameList = new ArrayList<>();
+        contentList = new ArrayList<>();
+        idList = new ArrayList<>();
+        emailList = new ArrayList<>();
+        dateList = new ArrayList<>();
+
+        dbHelper =new DatabaseHelper(getActivity().getBaseContext());
+        recyclerView = view.findViewById(R.id.recyclerWeekly);
+        getData();
+        layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
+        weeklyEventAdapter = new WeeklyEventAdapter(WeeklyEventFragment.this, nameList, contentList, idList,emailList,dateList);
+        //Memasang Adapter pada RecyclerView
+        recyclerView.setAdapter(weeklyEventAdapter);
+        //Membuat Underline pada Setiap Item Didalam List
+        DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity().getApplicationContext(), DividerItemDecoration.VERTICAL);
+        itemDecoration.setDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.line));
+        recyclerView.addItemDecoration(itemDecoration);
+
+        return view;
+    }
+
+    protected void getData() {
+        //Mengambil Repository dengan Mode Membaca
+        SQLiteDatabase ReadData = dbHelper.getReadableDatabase();
+        Cursor cursor = ReadData.rawQuery("SELECT * FROM  tb_event WHERE category = 'Weekly Event' AND email NOT LIKE '"+ emailProfile +"' ", null);
+
+        cursor.moveToFirst();//Memulai Cursor pada Posisi Awal
+
+        //Melooping Sesuai Dengan Jumlan Data (Count) pada cursor
+        for (int count = 0; count < cursor.getCount(); count++) {
+            cursor.moveToPosition(count);//Berpindah Posisi dari no index 0 hingga no index terakhir
+            //Mengambil data dari sesuai kolom array
+            nameList.add(cursor.getString(1));
+            contentList.add(cursor.getString(4));
+            idList.add(cursor.getString(0));
+            emailList.add(cursor.getString(8));
+            dateList.add(cursor.getString(3));
         }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_weekly_event, container, false);
     }
 }

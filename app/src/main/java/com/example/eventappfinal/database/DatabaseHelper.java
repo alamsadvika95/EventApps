@@ -44,9 +44,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + Content.EVENT_CAPACITY + " TEXT NOT NULL, "
                 + Content.EVENT_DESCRIPTION + " TEXT NOT NULL, "
                 + Content.EVENT_EMAIL + " TEXT NOT NULL)";
+        final String create_tb_join = "CREATE TABLE " + Content.TABLE_JOIN +
+                "(" + Content.JOIN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + Content.JOIN_ID_EVENT + " TEXT NOT NULL, "
+                + Content.JOIN_EMAIL + " TEXT NOT NULL)";
         db.execSQL(create_tb_user);
         db.execSQL(create_tb_notes);
         db.execSQL(create_tb_event);
+        db.execSQL(create_tb_join);
         db.execSQL(Content.insert1);
     }
 
@@ -55,6 +60,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + Content.TABLE_USER);
         db.execSQL("DROP TABLE IF EXISTS " + Content.TABLE_EVENT);
         db.execSQL("DROP TABLE IF EXISTS " + Content.TABLE_NOTES);
+        db.execSQL("DROP TABLE IF EXISTS " + Content.TABLE_JOIN);
         onCreate(db);
     }
 

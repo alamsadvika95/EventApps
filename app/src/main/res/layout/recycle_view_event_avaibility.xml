@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    android:id="@+id/view_event_avaibility">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:src="@drawable/picadd"
+        />
+    <TextView
+        android:id="@+id/viewEventNameAvaibility"
+        android:fontFamily="@font/poppins"
+        android:layout_toRightOf="@id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="5dp"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/viewEventContentAvaibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewEventNameAvaibility"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/image"
+        android:fontFamily="@font/montserratthin"
+        android:text="Content"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/viewEventIdAvaibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewEventContentAvaibility"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/image"
+        android:fontFamily="@font/montserratthin"
+        android:text="Id"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/viewEventEmailAvaibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewEventIdAvaibility"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/image"
+        android:fontFamily="@font/montserratthin"
+        android:text="Email"
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/eventDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/viewEventEmailAvaibility"
+        android:layout_marginLeft="200dp"
+        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/accent2"
+        android:layout_toRightOf="@id/image"
+        android:fontFamily="@font/montserratthin"
+        android:text="See Detail"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/viewEventDateDisplayAvaibility"
+        android:fontFamily="@font/poppins"
+        android:layout_toRightOf="@id/image"
+        android:layout_below="@id/viewEventEmailAvaibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="5dp"
+        android:text="Date"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/viewEventDateAvaibility"
+        android:fontFamily="@font/poppins"
+        android:layout_toRightOf="@id/viewEventDateDisplayAvaibility"
+        android:layout_below="@id/viewEventEmailAvaibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="5dp"
+        android:text="2021/01/1"
+        android:textColor="@color/black"
+        android:textSize="19sp"
+        android:textStyle="bold" />
+</RelativeLayout>
