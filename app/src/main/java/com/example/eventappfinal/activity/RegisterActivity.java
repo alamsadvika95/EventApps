@@ -1,7 +1,6 @@
 package com.example.eventappfinal.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -13,9 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import de.hdodenhof.circleimageview.CircleImageView;
-
 import com.example.eventappfinal.R;
 import com.example.eventappfinal.database.DatabaseHelper;
 import com.theartofdev.edmodo.cropper.CropImage;

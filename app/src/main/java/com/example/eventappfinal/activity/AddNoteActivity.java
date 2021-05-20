@@ -5,7 +5,6 @@ import com.example.eventappfinal.R;
 import com.example.eventappfinal.database.Content;
 import com.example.eventappfinal.database.DatabaseHelper;
 import com.example.eventappfinal.session.SessionManager;
-
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -14,13 +13,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.Toast;
-
 import java.util.HashMap;
 
 public class AddNoteActivity extends AppCompatActivity {
 
+    ImageView back;
     EditText addNoteDetail;
     Button addNotesButton;
     DatabaseHelper dbHelper;
@@ -45,6 +44,7 @@ public class AddNoteActivity extends AppCompatActivity {
 
         addNoteDetail = findViewById(R.id.addNoteDetail);
         addNotesButton = findViewById(R.id.addNotesButton);
+        back = findViewById(R.id.back);
 
         if(dbHelper.checkNote(id)>0){
             db = dbHelper.getReadableDatabase();
@@ -105,6 +105,14 @@ public class AddNoteActivity extends AppCompatActivity {
                         Toast.makeText(AddNoteActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(AddNoteActivity.this, MyEventActivity.class);
+                startActivity(i);
             }
         });
     }

@@ -11,13 +11,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.eventappfinal.R;
 import com.example.eventappfinal.database.DatabaseHelper;
 import com.example.eventappfinal.session.SessionManager;
-
 import java.util.HashMap;
-
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {

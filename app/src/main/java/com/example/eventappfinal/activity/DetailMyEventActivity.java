@@ -10,10 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.example.eventappfinal.R;
 import com.example.eventappfinal.database.DatabaseHelper;
-import com.example.eventappfinal.session.SessionManager;
 
 public class DetailMyEventActivity extends AppCompatActivity {
     Button updateEventButtton;

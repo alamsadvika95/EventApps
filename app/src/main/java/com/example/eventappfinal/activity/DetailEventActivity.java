@@ -2,7 +2,6 @@ package com.example.eventappfinal.activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -11,17 +10,17 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.eventappfinal.R;
-import com.example.eventappfinal.adapter.AlertDialogManager;
 import com.example.eventappfinal.database.DatabaseHelper;
 import com.example.eventappfinal.session.SessionManager;
-
 import java.util.HashMap;
 
 public class DetailEventActivity extends AppCompatActivity {
+
+    ImageView back;
     Button joinEventButtton;
     protected Cursor cursor;
     DatabaseHelper dbHelper;
@@ -63,6 +62,7 @@ public class DetailEventActivity extends AppCompatActivity {
         TextView capacityEventDetail = findViewById(R.id.capacityEventDetail);
         TextView dateEventDetail = findViewById(R.id.dateEventDetail);
         TextView descriptionEventDetail = findViewById(R.id.descriptionEventDetail);
+        back = findViewById(R.id.back);
 
         eventNameDetail.setText(name);
         contentEventDetail.setText(content);
@@ -121,6 +121,14 @@ public class DetailEventActivity extends AppCompatActivity {
                         .create();
                 dialog.show();
 
+            }
+        });
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(DetailEventActivity.this, AvaibilityActivity.class);
+                startActivity(i);
             }
         });
 

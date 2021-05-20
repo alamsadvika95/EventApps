@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EventAppFinal">
-        <activity android:name=".activity.SeeNoteActivity"></activity>
+        <activity android:name=".activity.DetailJoinActivity"></activity>
+        <activity android:name=".activity.MyJoinEventActivity" />
+        <activity android:name=".activity.SeeNoteActivity" />
         <activity android:name=".activity.AddNoteActivity" />
         <activity android:name=".activity.JoinEventActivity" />
         <activity android:name=".activity.DetailEventActivity" />

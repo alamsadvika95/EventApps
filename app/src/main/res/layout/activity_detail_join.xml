@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.DetailJoinActivity">
+
+    <ImageView
+        android:id="@+id/imageDetail"
+        android:layout_width="500dp"
+        android:layout_height="550dp"
+        android:src="@drawable/imagedetail"
+        />
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_bacwhite" />
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
+        android:gravity="center"
+        android:layout_below="@id/back"
+        android:fontFamily="@font/poppinssemi"
+        android:textColor="#fff"
+        android:textSize="22dp"
+        android:text="Event Details" />
+
+
+    <ImageView
+        android:id="@+id/wave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-210dp"
+        android:src="@drawable/picwave" />
+
+    <TextView
+        android:id="@+id/joinNameDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:gravity="left"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/Title"
+        android:fontFamily="@font/poppins"
+        android:textColor="#000"
+        android:textSize="25dp"
+        android:text="Event Name" />
+    <TextView
+        android:id="@+id/contentJoinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/joinNameDetail"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Content -"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/creatorJoinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contentJoinDetail"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Creator - "
+        android:textSize="14sp" />
+    <TextView
+        android:id="@+id/contentJoinDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/joinNameDetail"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/contentJoinText"
+        android:fontFamily="@font/montserrat"
+        android:text="Science"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/creatorJoinDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contentJoinText"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@id/creatorJoinText"
+        android:fontFamily="@font/montserrat"
+        android:text="alamsadvika@gmail.com"
+        android:textSize="14sp" />
+
+
+    <TextView
+        android:id="@+id/durationJoinDetail"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/creatorJoinText"
+        android:paddingTop="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:fontFamily="@font/poppinssemi"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:text="4"
+        android:textSize="30dp"
+        android:background="@drawable/radius_box"
+        android:elevation="5dp"
+        />
+
+    <TextView
+        android:id="@+id/durationJoinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/durationJoinDetail"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="-35dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Duration (in hours)"
+        android:textColor="@color/grey"
+        android:textSize="15sp"
+        android:elevation="5dp"
+        />
+
+    <TextView
+        android:id="@+id/capacityJoinDetail"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/creatorJoinText"
+        android:paddingTop="20dp"
+        android:layout_toRightOf="@+id/durationJoinDetail"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/poppinssemi"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:text="8"
+        android:textSize="30dp"
+        android:background="@drawable/radius_box"
+        android:elevation="5dp"
+        />
+
+
+    <TextView
+        android:id="@+id/capacityJoinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/durationJoinText"
+        android:layout_below="@id/capacityJoinDetail"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="-35dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Capacity (in person)"
+        android:textColor="@color/grey"
+        android:textSize="15sp"
+        android:elevation="5dp"
+        />
+    <TextView
+        android:id="@+id/dateJoinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/durationJoinText"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppinssemi"
+        android:text="Date "
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/dateJoinDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateJoinText"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/montserrat"
+        android:text="14 January 2020"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/descriptionJoinText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dateJoinDetail"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/poppinssemi"
+        android:text="Description "
+        android:textColor="@color/black"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/descriptionJoinDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/descriptionJoinText"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="-1dp"
+        android:layout_marginRight="30dp"
+        android:fontFamily="@font/montserrat"
+        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. L"
+        android:textSize="12sp" />
+
+</RelativeLayout>

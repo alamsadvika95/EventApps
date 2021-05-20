@@ -8,14 +8,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
 import com.example.eventappfinal.R;
 import com.example.eventappfinal.session.SessionManager;
 
 public class MainActivity extends AppCompatActivity {
     SessionManager session;
     Button buttonSignOut;
-    CardView menuProfile, menuCreateEvent, menuMyEvent, menuAvailableEvent, menuMyNotes, menuAbout;
+    CardView menuProfile, menuCreateEvent, menuMyEvent, menuAvailableEvent, menuJoinEvent, menuAbout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         menuCreateEvent = findViewById(R.id.menuCreateEvent);
         menuMyEvent = findViewById(R.id.menuMyEvent);
         menuAvailableEvent = findViewById(R.id.menuAvailableEvent);
-        menuMyNotes = findViewById(R.id.menuMyNotes);
+        menuJoinEvent = findViewById(R.id.menuJoinEvent);
         menuAbout = findViewById(R.id.menuAbout);
         buttonSignOut = findViewById(R.id.buttonSignOut);
 
@@ -59,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-        menuMyNotes.setOnClickListener(new View.OnClickListener() {
+        menuJoinEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, AboutActivity.class);
+                Intent i = new Intent(MainActivity.this, MyJoinEventActivity.class);
                 startActivity(i);
             }
         });

@@ -2,15 +2,12 @@ package com.example.eventappfinal.activity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import android.app.DatePickerDialog;
-import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.InputType;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -20,12 +17,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
+import java.util.Calendar;
+import java.util.HashMap;
+
 import com.example.eventappfinal.R;
 import com.example.eventappfinal.database.DatabaseHelper;
 import com.example.eventappfinal.session.SessionManager;
-
-import java.util.Calendar;
-import java.util.HashMap;
 
 public class AddEventActivity extends AppCompatActivity {
 
