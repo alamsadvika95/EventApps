@@ -30,7 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         final String create_tb_notes = "CREATE TABLE " + Content.TABLE_NOTES +
                 "(" + Content.NOTES_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + Content.NOTES_TITLE + " TEXT NOT NULL, "
+                + Content.NOTES_EVENT_ID + " TEXT NOT NULL, "
                 + Content.NOTES_DESCRIPTION + " TEXT NOT NULL, "
                 + Content.NOTES_EMAIL + " TEXT NOT NULL)";
 
@@ -119,6 +119,26 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(Content.EVENT_EMAIL, email);
 
         long result = create.update(Content.TABLE_EVENT,values,"id=?",new String[]{id});
+        return result;
+    }
+//    public boolean checkNote(String idEvent){
+//        @SuppressLint("Recycle") Cursor mCursor = db.rawQuery("SELECT * FROM " + Content.TABLE_NOTES + " WHERE " + Content.NOTES_EVENT_ID + "=?", new String[]{idEvent});
+//        if (mCursor != null) {
+//            return true;
+//        }
+//        return false;
+//        }
+
+    public long checkNote ( String idEvent){
+        long result;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM tb_mynotes WHERE event_id = '" + idEvent + "'", null);
+        cursor.moveToFirst();
+        if (cursor.getCount() > 0) {
+            result = 1;
+        }else
+            result = 0;
+
         return result;
     }
 }

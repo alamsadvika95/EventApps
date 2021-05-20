@@ -16,7 +16,7 @@ public class Content {
     //note table
     public static final String TABLE_NOTES="tb_mynotes";
     public static final String NOTES_ID="id";
-    public static final String NOTES_TITLE="title";
+    public static final String NOTES_EVENT_ID="event_id";
     public static final String NOTES_DESCRIPTION="description";
     public static final String NOTES_EMAIL="email";
 

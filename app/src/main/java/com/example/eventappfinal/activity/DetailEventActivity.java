@@ -29,7 +29,6 @@ public class DetailEventActivity extends AppCompatActivity {
     SessionManager session;
     String name, content, creator, duration, capacity, date, description;
     String email, id;
-    AlertDialogManager alert = new AlertDialogManager();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -18,8 +18,10 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.eventappfinal.R;
+import com.example.eventappfinal.activity.AddNoteActivity;
 import com.example.eventappfinal.activity.DetailMyEventActivity;
 import com.example.eventappfinal.activity.MyEventActivity;
+import com.example.eventappfinal.activity.SeeNoteActivity;
 import com.example.eventappfinal.database.DatabaseHelper;
 
 import java.util.ArrayList;
@@ -46,7 +48,7 @@ public class MyEventAdapter extends RecyclerView.Adapter<MyEventAdapter.ViewHold
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView detail, name, content, id, category, date;
-        private ImageButton delete;
+        private ImageButton delete, note, seeNote;
 
         ViewHolder(View itemView) {
             super(itemView);
@@ -63,6 +65,8 @@ public class MyEventAdapter extends RecyclerView.Adapter<MyEventAdapter.ViewHold
             date = itemView.findViewById(R.id.viewEventDate);
             detail = itemView.findViewById(R.id.detail);
             delete = itemView.findViewById(R.id.delete);
+            note = itemView.findViewById(R.id.addNote);
+            seeNote = itemView.findViewById(R.id.seeNote);
         }
     }
 
@@ -120,6 +124,26 @@ public class MyEventAdapter extends RecyclerView.Adapter<MyEventAdapter.ViewHold
                         });
                 AlertDialog alertDialog = alertDialogBuilder.create();
                 alertDialog.show();
+            }
+        });
+
+        holder.note.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dataForm = new Intent(view.getContext(), AddNoteActivity.class);
+                dataForm.putExtra("SendId", holder.id.getText().toString());
+                context.startActivity(dataForm);
+                ((Activity)context).finish();
+            }
+        });
+
+        holder.seeNote.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent dataForm = new Intent(view.getContext(), SeeNoteActivity.class);
+                dataForm.putExtra("SendId", holder.id.getText().toString());
+                context.startActivity(dataForm);
+                ((Activity)context).finish();
             }
         });
 

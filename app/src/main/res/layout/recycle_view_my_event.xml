@@ -98,22 +98,44 @@
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="15dp"
         android:background="@color/whiteblurred"
         app:srcCompat="@drawable/ic_delete"
         tools:ignore="VectorDrawableCompat" />
+    <ImageButton
+        android:id="@+id/addNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/delete"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/whiteblurred"
+        app:srcCompat="@drawable/ic_add_note"
+        tools:ignore="VectorDrawableCompat" />
+    <ImageButton
+        android:id="@+id/seeNote"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addNote"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/whiteblurred"
+        app:srcCompat="@drawable/ic_note"
+        tools:ignore="VectorDrawableCompat" />
+
     <TextView
         android:id="@+id/detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/viewEventId"
-        android:layout_marginLeft="200dp"
-        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
+        android:layout_below="@id/viewEventDateDisplay"
+        android:layout_marginLeft="170dp"
         android:layout_marginTop="5dp"
-        android:textColor="@color/accent2"
-        android:layout_toRightOf="@id/image"
+        android:drawableRight="@drawable/ic_baseline_keyboard_arrow_right_24"
         android:fontFamily="@font/montserratthin"
-        android:text="Details Event"
+        android:text="Details"
+        android:textColor="@color/accent2"
         android:textSize="12sp" />
 
 </RelativeLayout>
