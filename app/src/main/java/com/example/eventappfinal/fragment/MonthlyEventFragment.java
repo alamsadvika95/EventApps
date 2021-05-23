@@ -41,18 +41,12 @@ public class MonthlyEventFragment extends Fragment {
     private String emailProfile;
 
     public MonthlyEventFragment() {
-
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_monthly_event, container, false);
-
         swipeRefreshLayout = view.findViewById(R.id.swipeRefresh);
-
         SessionManager sessionManager = new SessionManager(requireActivity());
         HashMap<String, String> user = sessionManager.getUserDetails();
         emailProfile = user.get(SessionManager.KEY_EMAIL);
@@ -65,7 +59,6 @@ public class MonthlyEventFragment extends Fragment {
                 idList = new ArrayList<>();
                 emailList = new ArrayList<>();
                 dateList = new ArrayList<>();
-
                 dbHelper = new DatabaseHelper(getActivity().getBaseContext());
                 recyclerView = view.findViewById(R.id.recyclerMonthly);
                 getData();
@@ -73,9 +66,7 @@ public class MonthlyEventFragment extends Fragment {
                 recyclerView.setLayoutManager(layoutManager);
                 recyclerView.setHasFixedSize(true);
                 monthlyEventAdapter = new MonthlyEventAdapter(MonthlyEventFragment.this, nameList, contentList, idList,emailList,dateList);
-                //memasang adapter di recycle view
                 recyclerView.setAdapter(monthlyEventAdapter);
-                //membuat underline pada setiap item di dalem list
                 DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity().getApplicationContext(), DividerItemDecoration.VERTICAL);
                 itemDecoration.setDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.line));
                 recyclerView.addItemDecoration(itemDecoration);
@@ -94,31 +85,19 @@ public class MonthlyEventFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         monthlyEventAdapter = new MonthlyEventAdapter(MonthlyEventFragment.this, nameList, contentList, idList,emailList,dateList);
-        //Memasang Adapter pada RecyclerView
         recyclerView.setAdapter(monthlyEventAdapter);
-        //Membuat Underline pada Setiap Item Didalam List
         DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity().getApplicationContext(), DividerItemDecoration.VERTICAL);
         itemDecoration.setDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.line));
         recyclerView.addItemDecoration(itemDecoration);
-
-
         return view;
     }
-
     protected void getData() {
 
-        //Mengambil Repository dengan Mode Membaca
         SQLiteDatabase ReadData = dbHelper.getReadableDatabase();
         Cursor cursor = ReadData.rawQuery("SELECT * FROM  tb_event WHERE category = 'Monthly Event' AND email NOT LIKE '"+ emailProfile +"' ", null);
-
-        cursor.moveToFirst();//Memulai Cursor pada Posisi Awal
-
-        //Melooping Sesuai Dengan Jumlan Data (Count) pada cursor
+        cursor.moveToFirst();
         for (int count = 0; count < cursor.getCount(); count++) {
-
-            cursor.moveToPosition(count);//Berpindah Posisi dari no index 0 hingga no index terakhir
-
-            //Mengambil data dari sesuai kolom array
+            cursor.moveToPosition(count);
             nameList.add(cursor.getString(1));
             contentList.add(cursor.getString(4));
             idList.add(cursor.getString(0));

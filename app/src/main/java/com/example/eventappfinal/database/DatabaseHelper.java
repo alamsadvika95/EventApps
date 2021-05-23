@@ -11,13 +11,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
-
     private SQLiteDatabase db;
-
     public DatabaseHelper(@Nullable Context context) {
         super(context, Content.DATABASE_NAME, null, Content.DATABASE_VERSION);
     }
-
     @Override
     public void onCreate(SQLiteDatabase db) {
         final String create_tb_user = "CREATE TABLE " + Content.TABLE_USER +
@@ -121,13 +118,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         long result = create.update(Content.TABLE_EVENT,values,"id=?",new String[]{id});
         return result;
     }
-//    public boolean checkNote(String idEvent){
-//        @SuppressLint("Recycle") Cursor mCursor = db.rawQuery("SELECT * FROM " + Content.TABLE_NOTES + " WHERE " + Content.NOTES_EVENT_ID + "=?", new String[]{idEvent});
-//        if (mCursor != null) {
-//            return true;
-//        }
-//        return false;
-//        }
 
     public long checkNote ( String idEvent){
         long result;

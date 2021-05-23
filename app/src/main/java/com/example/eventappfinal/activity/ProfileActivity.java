@@ -93,5 +93,12 @@ public class ProfileActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        boxEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(ProfileActivity.this, MyEventActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

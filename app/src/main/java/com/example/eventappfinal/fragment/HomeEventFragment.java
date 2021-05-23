@@ -15,17 +15,12 @@ import com.example.eventappfinal.R;
 import com.example.eventappfinal.activity.MainActivity;
 
 public class HomeEventFragment extends Fragment {
-
     ImageView back;
-
     public HomeEventFragment() {
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view =inflater.inflate(R.layout.fragment_home_event, container, false);
-
         back = view.findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

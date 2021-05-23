@@ -22,7 +22,6 @@ public class AvaibilityActivity extends AppCompatActivity {
     private String sendVal = "id";
     private MeowBottomNavigation bottomNavigation;
     private ScreenSlidePagerAdapter adapter;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +32,6 @@ public class AvaibilityActivity extends AppCompatActivity {
         pager.setAdapter(adapter);
         pager.setCurrentItem(0);
         pager.setUserInputEnabled(false);
-
         bottomNavigation.show(1, true);
 
         bottomNavigation.add(new MeowBottomNavigation.Model(1, R.drawable.ic_home));
@@ -78,7 +76,6 @@ public class AvaibilityActivity extends AppCompatActivity {
                 // your codes
             }
         });
-
         bottomNavigation.setOnReselectListener(new MeowBottomNavigation.ReselectListener() {
             @Override
             public void onReselectItem(MeowBottomNavigation.Model item) {
@@ -86,7 +83,6 @@ public class AvaibilityActivity extends AppCompatActivity {
             }
         });
     }
-
     private class ScreenSlidePagerAdapter extends FragmentStateAdapter {
         public ScreenSlidePagerAdapter(FragmentActivity fa) {
             super(fa);
@@ -111,7 +107,6 @@ public class AvaibilityActivity extends AppCompatActivity {
                     return new HomeEventFragment();
             }
         }
-
         @Override
         public int getItemCount() {
             return NUM_PAGES;

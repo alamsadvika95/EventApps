@@ -70,9 +70,7 @@ public class SeminarFragment extends Fragment {
                 recyclerView.setLayoutManager(layoutManager);
                 recyclerView.setHasFixedSize(true);
                 seminarEventAdapter = new SeminarEventAdapter(SeminarFragment.this, nameList, contentList, idList,emailList,dateList);
-                //memasang adapter di recycle view
                 recyclerView.setAdapter(seminarEventAdapter);
-                //membuat underline pada setiap item di dalem list
                 DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity().getApplicationContext(), DividerItemDecoration.VERTICAL);
                 itemDecoration.setDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.line));
                 recyclerView.addItemDecoration(itemDecoration);
@@ -92,9 +90,7 @@ public class SeminarFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         seminarEventAdapter = new SeminarEventAdapter(SeminarFragment.this, nameList, contentList, idList,emailList,dateList);
-        //Memasang Adapter pada RecyclerView
         recyclerView.setAdapter(seminarEventAdapter);
-        //Membuat Underline pada Setiap Item Didalam List
         DividerItemDecoration itemDecoration = new DividerItemDecoration(getActivity().getApplicationContext(), DividerItemDecoration.VERTICAL);
         itemDecoration.setDrawable(ContextCompat.getDrawable(getActivity().getApplicationContext(), R.drawable.line));
         recyclerView.addItemDecoration(itemDecoration);
@@ -103,18 +99,13 @@ public class SeminarFragment extends Fragment {
     }
 
     protected void getData() {
-        //Mengambil Repository dengan Mode Membaca
         SQLiteDatabase ReadData = dbHelper.getReadableDatabase();
         Cursor cursor = ReadData.rawQuery("SELECT * FROM  tb_event WHERE category = 'Seminar' AND email NOT LIKE '"+ emailProfile +"' ", null);
 
-        cursor.moveToFirst();//Memulai Cursor pada Posisi Awal
-
-        //Melooping Sesuai Dengan Jumlan Data (Count) pada cursor
+        cursor.moveToFirst();
         for (int count = 0; count < cursor.getCount(); count++) {
 
-            cursor.moveToPosition(count);//Berpindah Posisi dari no index 0 hingga no index terakhir
-
-            //Mengambil data dari sesuai kolom array
+            cursor.moveToPosition(count);
             nameList.add(cursor.getString(1));
             contentList.add(cursor.getString(4));
             idList.add(cursor.getString(0));

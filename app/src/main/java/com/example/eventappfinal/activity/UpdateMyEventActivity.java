@@ -80,7 +80,6 @@ public class UpdateMyEventActivity extends AppCompatActivity {
 
         }
 
-        updateEventHeadText.setText(SendId);
         updateNameText.setText(nameEvent);
 
         final String[] categoryList = {"One Time Event", "Weekly Event", "Monthly Event", "Seminar"};
