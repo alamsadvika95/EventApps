@@ -91,7 +91,7 @@
             android:gravity="left"
             android:text="Math Event"
             android:textColor="@color/grey"
-            android:textSize="12dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/categoryJoinText"
@@ -118,7 +118,7 @@
             android:gravity="left"
             android:text="One Time Event"
             android:textColor="@color/grey"
-            android:textSize="12dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/creatorJoinText"
@@ -145,7 +145,7 @@
             android:gravity="left"
             android:text="alamsadvika@gmail.com"
             android:textColor="@color/grey"
-            android:textSize="12dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/dateJoinText"
@@ -172,7 +172,7 @@
             android:gravity="left"
             android:text="23 May 2021"
             android:textColor="@color/grey"
-            android:textSize="12dp" />
+            android:textSize="16dp" />
         <TextView
             android:id="@+id/reminderJoinText"
             android:layout_width="wrap_content"

@@ -80,7 +80,7 @@
         android:layout_toRightOf="@id/contentEventText"
         android:fontFamily="@font/montserrat"
         android:text="Science"
-        android:textSize="15sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/creatorEventDetail"
@@ -91,7 +91,7 @@
         android:layout_toRightOf="@id/creatorEventText"
         android:fontFamily="@font/montserrat"
         android:text="alamsadvika@gmail.com"
-        android:textSize="14sp" />
+        android:textSize="16sp" />
 
 
     <TextView
@@ -180,7 +180,7 @@
         android:layout_marginRight="30dp"
         android:fontFamily="@font/montserrat"
         android:text="14 January 2020"
-        android:textSize="12sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/descriptionEventText"

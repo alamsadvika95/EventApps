@@ -158,7 +158,7 @@
             android:gravity="left"
             android:text="Alamsadvika@hotmail.com"
             android:textColor="@color/grey"
-            android:textSize="12dp" />
+            android:textSize="16dp" />
 
         <TextView
             android:id="@+id/boxDescription"
@@ -193,7 +193,7 @@
             android:layout_height="50dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_alignParentBottom="true"
             android:background="@drawable/radius_btnaksen"
             android:fontFamily="@font/poppins"

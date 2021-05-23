@@ -15,8 +15,6 @@ import java.util.HashMap;
 
 public class JoinEventActivity extends AppCompatActivity {
 
-    Button btnJoin;
-    TextView joinID, joinEmail;
     protected Cursor cursor, cursor2;
     DatabaseHelper dbHelper;
     SQLiteDatabase db;
@@ -34,6 +32,8 @@ public class JoinEventActivity extends AppCompatActivity {
         Intent i = getIntent();
         id = i.getStringExtra("SendId");
 
+
+
         dbHelper = new DatabaseHelper(this);
         db = dbHelper.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM tb_event WHERE id = '" + id + "'", null);
@@ -46,6 +46,11 @@ public class JoinEventActivity extends AppCompatActivity {
             dateJoin = cursor.getString(3);
         }
 
+        cursor2 = db.rawQuery("SELECT * FROM tb_user WHERE username = '" + email + "'", null);
+        if (cursor2.getCount() > 0) {
+            cursor2.moveToPosition(0);
+            nameUser = cursor2.getString(2);
+        }
 
         TextView nameJoinEvent =findViewById(R.id.nameJoinEvent);
         TextView categoryJoinEvent=  findViewById(R.id.categoryJoinEvent);
@@ -57,7 +62,7 @@ public class JoinEventActivity extends AppCompatActivity {
         categoryJoinEvent.setText(categoryJoin);
         creatorJoinEvent.setText(creatorJoin);
         dateJoinEvent.setText(dateJoin);
-        nameUserEvent.setText(email);
+        nameUserEvent.setText(nameUser);
 
 
         Button joinToMain = findViewById(R.id.joinToMain);
